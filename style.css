@@ -1,0 +1,155 @@
+@font-face {
+	font-family: "Inter";
+	src: url(./assets/fonts/Inter-Regular.ttf);
+}
+
+:root {
+	--background:     #ffffff;
+	--background-alt: #eeeeee;
+	--foreground:     #000000;
+
+	--border: 2px solid #dddddd;
+	--box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+* {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Inter";
+	font-size: 15px;
+	font-weight: normal;
+	line-height: 125%;
+	color: var(--foreground);
+}
+
+body {
+	background-color: var(--background);
+}
+
+#site-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 25px;
+	min-height: 100vh;
+	margin: 25px;
+	overflow-x: hidden;
+}
+
+h1 {
+	font-size: 3em;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	max-width: 500px;
+	padding: 20px;
+	border: var(--border);
+	background-color: var(--background-alt);
+}
+
+form label {
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+form input[type="text"], form textarea {
+	width: 100%;
+	margin-bottom: 20px;
+	padding: 10px;
+	border: none;
+	outline: none;
+	transition: 0.3s;
+}
+
+form input[type="text"]:focus, form textarea:focus {
+	margin-top: -5px;
+	margin-bottom: 25px;
+	box-shadow: var(--box-shadow);
+}
+
+form textarea {
+	resize: none;
+}
+
+form input[type="submit"] {
+	padding: 10px 20px;
+	border: var(--border);
+	background-color: var(--background);
+	transition: 0.3s;
+}
+
+form input[type="submit"]:hover {
+	cursor: pointer;
+	margin-top: -5px;
+	margin-bottom: 5px;
+	box-shadow: var(--box-shadow);
+}
+
+#sort {
+	width: 100px;
+	height: 25px;
+	border: var(--border);
+	border-radius: 12.5px;
+	background-color: var(--background-alt);
+	cursor: pointer;
+}
+
+#sort p {
+	position: absolute;
+	bottom: 100%;
+	pointer-events: none;
+}
+
+#sort p:first-of-type {
+	left: 0;
+	transform: translateX(-50%);
+}
+
+#sort p:last-of-type {
+	right: 0;
+	transform: translateX(50%);
+}
+
+#ball {
+	height: 100%;
+	aspect-ratio: 1 / 1;
+	border-radius: inherit;
+	background-color: var(--background);
+	transition: 0.3s;
+}
+
+#ball.old {
+	margin-left: 100%;
+	transform: translateX(-100%);
+}
+
+.post {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	width: 100%;
+	padding: 20px;
+	border: var(--border);
+	background-color: var(--background-alt);
+}
+
+.post .info {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.post .comment {
+	word-wrap: anywhere;
+}
